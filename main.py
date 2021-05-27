@@ -29,6 +29,9 @@ re.split('data-title=\".*?\"', vaccine_data[2])[1]
 vacunas = []
 for i in range(len(vaccine_data)):
 
+    title = ""
+    vacunados = ""
+
     #Get state name
     match_title = re.search('data-title=\".*?\"', vaccine_data[i])
     if match_title:
@@ -39,7 +42,7 @@ for i in range(len(vaccine_data)):
     if match_vacunados:
         vacunados = match_vacunados.group(0).replace("data-vacunados=", "").replace("\"", "").replace(",","")
 
-    if match_title and match_vacunados:
+    if title != "" or vacunados != "":
         vacunas.append({"Estado": title, "vacunados": vacunados})
         print(title + ": " + vacunados + " vacunados")
 
