@@ -2,6 +2,7 @@ import pandas as pd
 import requests
 import re
 from datetime import datetime
+from datetime import date
 
 download_name   = "Vacunados MX por estado  " + date.today().strftime('%Y-%m-%d') + ".csv"
 download_folder = "data"
