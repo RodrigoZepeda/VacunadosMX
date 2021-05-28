@@ -18,7 +18,6 @@ most_recent = max(csvs, key=lambda x: os.stat(os.path.join(path, x)).st_mtime)
 
 #Lectura del archivo
 vacunas           = pd.read_csv(path + most_recent)
-vacunas["Estado"] = vacunas["Estado"].str.replace(" ","")
 vacunas           = vacunas.sort_values('Estado')
 
 #Imagen
