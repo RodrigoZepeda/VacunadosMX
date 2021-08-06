@@ -84,10 +84,10 @@ g.set_titles(col_template="{col_name}")
 g.set_xticklabels(labels, rotation=90, fontsize=8)
 g.set(ylim=(0,1.2*ymax), yticks=laby)
 g.set_yticklabels(laby, fontsize=8)
-g.fig.subplots_adjust(top=1.5)
 g.fig.suptitle('TOTAL DE DOSIS APLICADAS PER CÁPITA EN MÉXICO\nGithub: RodrigoZepeda/VacunasMX | Fuente: Página oficial: http://vacunacovid.gob.mx/wordpress/')
-g.savefig('images/Dosis_per_capita_ordenados_todos.png', dpi = 750)
 g.tight_layout()
+g.savefig('images/Dosis_per_capita_ordenados_todos.png', dpi = 750)
+
 
 #---------------------------------------------
 #            AVANCES ABSOLUTOS
@@ -104,7 +104,6 @@ g.set(ylim=(0,1.2*ymax), yticks=laby)
 g.set_yticklabels(laby, fontsize=8)
 for ax in g.axes.flat:
     ax.yaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}'))
-g.fig.subplots_adjust(top=1.5)
 g.fig.suptitle('TOTAL DE DOSIS APLICADAS POR ENTIDAD FEDERATIVA EN MÉXICO\nGithub: RodrigoZepeda/VacunasMX | Fuente: Página oficial: http://vacunacovid.gob.mx/wordpress/')
 g.tight_layout()
 g.savefig('images/Dosis_todos.png', dpi = 750)
