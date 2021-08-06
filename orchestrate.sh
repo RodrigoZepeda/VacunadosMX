@@ -7,6 +7,7 @@
 date=$(date '+%Y-%m-%d')
 python3 main.py
 python3 plots.py
+python3 onedataset.py
 git add .
 git commit -m "Se actualizadon datos hasta ${date}"
 git push origin main

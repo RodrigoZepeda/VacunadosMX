@@ -24,38 +24,14 @@ vacunas           = vacunas.sort_values('Estado')
 g           = sns.catplot(data=vacunas, kind="bar", x="Estado", y="vacunados", height=6, aspect=2)
 loc, labels = plt.xticks()
 g.set_xticklabels(labels, rotation=90)
-g.set(title = "Github: RodrigoZepeda/VacunasMX | Fuente: Página del gobierno: http://vacunacovid.gob.mx/wordpress/", ylabel='Vacunas aplicadas', xlabel='Entidad')
+g.set(title = "Github: RodrigoZepeda/VacunasMX | Fuente: Página del gobierno: http://vacunacovid.gob.mx/wordpress/",
+      ylabel='Dosis aplicadas', xlabel='Entidad')
 for ax in g.axes.flat:
     ax.yaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}'))
-plt.suptitle('Total de vacunas aplicadas por entidad federativa en México')
+plt.suptitle('Total de dosis aplicadas por entidad federativa en México')
 plt.tight_layout()
-plt.savefig('images/Vacunados_actualizados.png', dpi = 750)
+plt.savefig('images/Dosis_actualizados.png', dpi = 750)
 
-#---------------------------------------------
-#            CAMBIO ABSOLUTO (AYER-HOY)
-#---------------------------------------------
-#Get previous csv
-csvs = list(filter(lambda x : x != most_recent, csvs))
-second_most_recent = max(csvs, key=lambda x: os.stat(os.path.join(path, x)).st_mtime)
-
-#Lectura del archivo
-vacunas_pasadas            = pd.read_csv(path + second_most_recent)
-vacunas_pasadas            = vacunas_pasadas.sort_values('Estado')
-vacunas["delta_vacunados"] = vacunas["vacunados"] - vacunas_pasadas["vacunados"]
-fecha_finit                 = vacunas["descarga"][0]
-fecha_init                = vacunas_pasadas["descarga"][0]
-
-#Imagen
-vacunas     = vacunas.sort_values("delta_vacunados", ascending=False, na_position = "last")
-g           = sns.catplot(data=vacunas, kind="bar", x="Estado", y="delta_vacunados", height=6, aspect=2)
-loc, labels = plt.xticks()
-g.set_xticklabels(labels, rotation=90)
-g.set(title = "Github: RodrigoZepeda/VacunasMX | Fuente: Página del gobierno: http://vacunacovid.gob.mx/wordpress/", ylabel='Vacunas aplicadas', xlabel='Entidad')
-for ax in g.axes.flat:
-    ax.yaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}'))
-plt.suptitle('Vacunas aplicadas por entidad federativa en México entre ' + fecha_init + " y " + fecha_finit)
-plt.tight_layout()
-plt.savefig('images/Vacunados_delta.png', dpi = 750)
 
 #---------------------------------------------
 #            GRÁFICA PER CÁPITA
@@ -85,22 +61,12 @@ dosis_per_capita = pd.merge(vacunas, individuos, on = "Estado")
 dosis_per_capita["Dosis_per_capita"] = dosis_per_capita["vacunados"] / dosis_per_capita["Population"]
 
 #Imagen
-g = sns.catplot(data=dosis_per_capita, kind="bar", x="Estado", y="Dosis_per_capita", height=6, aspect=2)
-loc, labels = plt.xticks()
-g.set(title = "Github: RodrigoZepeda/VacunasMX | Fuente: INEGI Censo 2020 y Página del gobierno: http://vacunacovid.gob.mx/wordpress/",
-      ylabel='Vacunas per capita', xlabel='Entidad')
-g.set_xticklabels(labels, rotation=90)
-plt.suptitle('Total de vacunas aplicadas per capita por entidad federativa en México')
-plt.tight_layout()
-plt.savefig('images/Dosis_per_capita_actualizados.png', dpi = 750)
-
-#Imagen
 dosis_per_capita = dosis_per_capita.sort_values("Dosis_per_capita", ascending=False, na_position = "last")
 g = sns.catplot(data=dosis_per_capita, kind="bar", x="Estado", y="Dosis_per_capita", height=6, aspect=2)
 loc, labels = plt.xticks()
 g.set(title = "Github: RodrigoZepeda/VacunasMX | Fuente: INEGI Censo 2020 y Página del gobierno: http://vacunacovid.gob.mx/wordpress/",
-      ylabel='Vacunas per capita', xlabel='Entidad')
+      ylabel='Dosis per capita', xlabel='Entidad')
 g.set_xticklabels(labels, rotation=90)
-plt.suptitle('Total de vacunas aplicadas per capita por entidad federativa en México')
+plt.suptitle('Total de dosis aplicadas per capita por entidad federativa en México')
 plt.tight_layout()
-plt.savefig('images/Dosis_per_capita_ordenados.png', dpi = 750)
+plt.savefig('images/Dosis_per_capita_ordenados_recientes.png', dpi = 750)
