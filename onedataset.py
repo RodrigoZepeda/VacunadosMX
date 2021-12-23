@@ -22,7 +22,7 @@ df = pd.concat((pd.read_csv(f) for f in all_files), ignore_index=True)
 
 #Obtain difference in values
 df["descarga"] = pd.to_datetime(df["descarga"], format="%d-%b-%Y (%H:%M:%S)")
-df             = df.sort_values("descarga", ascending=True, na_position = "last")
+df             = df.sort_values("descarga", ascending=False, na_position = "last")
 df['diff']     = df.groupby(['Estado'])['vacunados'].diff().fillna(0)
 
 #Get the initial values
