@@ -10,5 +10,5 @@ date=$(date '+%Y-%m-%d')
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python plots.py
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python onedataset.py
 git add .
-git commit -m "Se actualizadon datos con fecha ${date}"
+git commit -m "Actualización ${date}"
 git push origin main
