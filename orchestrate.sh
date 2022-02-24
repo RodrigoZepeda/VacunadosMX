@@ -4,11 +4,10 @@
 #Author: Rodrigo Zepeda
 #Contact: rzepeda17[at]gmail.com
 #----------------------------------------
-cd /home/rodrigo/VacunadosMX
 date=$(date '+%Y-%m-%d')
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python main.py
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python plots.py
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python onedataset.py
-git add .
-git commit -m "Actualización ${date}"
-git push origin main
+git -C /home/rodrigo/VacunadosMX add .
+git -C /home/rodrigo/VacunadosMX commit -m "Actualización ${date}"
+git -C /home/rodrigo/VacunadosMX push origin main
