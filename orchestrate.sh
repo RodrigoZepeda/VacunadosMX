@@ -5,9 +5,9 @@
 #Contact: rzepeda17[at]gmail.com
 #----------------------------------------
 date=$(date '+%Y-%m-%d')
-python3 main.py
-python3 plots.py
-python3 onedataset.py
+/home/rodrigo/miniconda3/envs/VacunaDownload/bin/python main.py
+/home/rodrigo/miniconda3/envs/VacunaDownload/bin/python plots.py
+/home/rodrigo/miniconda3/envs/VacunaDownload/bin/python onedataset.py
 git add .
 git commit -m "Se actualizadon datos hasta ${date}"
 git push origin main
