@@ -4,6 +4,7 @@
 #Author: Rodrigo Zepeda
 #Contact: rzepeda17[at]gmail.com
 #----------------------------------------
+cd /home/rodrigo/VacunadosMX
 date=$(date '+%Y-%m-%d')
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python main.py
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python plots.py
