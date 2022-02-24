@@ -9,6 +9,6 @@ date=$(date '+%Y-%m-%d')
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python main.py
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python plots.py
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python onedataset.py
-git -C /home/rodrigo/VacunadosMX add .
-git -C /home/rodrigo/VacunadosMX commit -m "Actualización ${date}"
-git -C /home/rodrigo/VacunadosMX push origin main
+/usr/bin/git -C /home/rodrigo/VacunadosMX add .
+/usr/bin/git -C /home/rodrigo/VacunadosMX commit -m "Actualización ${date}"
+/usr/bin/git -C /home/rodrigo/VacunadosMX push origin main
