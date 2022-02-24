@@ -1,3 +1,4 @@
+#!/bin/sh
 #-----------------------------
 #File for downloading info from the vaccine website, creating the database
 #and some plots to upload to github
