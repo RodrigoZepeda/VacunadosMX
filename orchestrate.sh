@@ -5,6 +5,7 @@
 #Author: Rodrigo Zepeda
 #Contact: rzepeda17[at]gmail.com
 #----------------------------------------
+. ~/.keychain/`/bin/hostname`-sh
 cd /home/rodrigo/VacunadosMX
 date=$(date '+%Y-%m-%d')
 /home/rodrigo/miniconda3/envs/VacunaDownload/bin/python main.py
