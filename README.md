@@ -20,3 +20,6 @@ Las imágenes se encuentran en [images](https://github.com/RodrigoZepeda/Vacunad
 
 ## Querétaro
 Querétaro no tuvo datos por mucho tiempo por lo que se reporta como vacío. 
+
+## Otras fuentes
+Vale la pena que veas también los datos de **Our World in Data** disponibles en el siguiente [link](https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Mexico.csv) donde vienen por vacuna a nivel nacional. 
