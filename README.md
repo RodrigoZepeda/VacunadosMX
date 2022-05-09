@@ -1,5 +1,8 @@
 # VacunadosMX
 
+## Ya no se actualiza
+**Desde el 2022-01-09 no han actualizado datos. Hoy 9 de mayo de 2022 he decidido dejar de actualizar el repositorio.**
+
 > **Nota** A partir del 25 de febrero del 2022 los datos se actualizan diario a las 3:55 de la mañana Ciudad de México.
 
 Scrapper para descargar la cantidad de vacunados por estado en México así como los datos.
